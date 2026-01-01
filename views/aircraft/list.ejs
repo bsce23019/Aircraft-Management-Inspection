@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="nav">
+    <h2>Aircraft List</h2>
+    <a href="/aircraft/create" class="btn btn-primary">+ Add Aircraft</a>
+  </div>
+
+  <table>
+    <tr>
+      <th>Reg No</th>
+      <th>Model</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+
+    <% aircrafts.forEach(a => { %>
+      <tr>
+        <td><%= a.registrationNumber %></td>
+        <td><%= a.model %></td>
+        <td>
+          <span class="status 
+            <%= a.status === 'Active' ? 'active' :
+                a.status === 'Under Maintenance' ? 'maintenance' : 'grounded' %>">
+            <%= a.status %>
+          </span>
+        </td>
+        <td>
+          <a class="btn btn-warning" href="/aircraft/edit/<%= a.id %>">Edit</a>
+          <a class="btn btn-danger" href="/aircraft/delete/<%= a.id %>">Delete</a>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</div>

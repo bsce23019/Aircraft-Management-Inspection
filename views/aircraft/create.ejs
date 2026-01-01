@@ -1,0 +1,17 @@
+<h2>Add Aircraft</h2>
+
+<form method="POST" action="/aircraft/create">
+  <input name="registrationNumber" placeholder="Registration No" required />
+  <input name="model" placeholder="Model" required />
+  <input name="manufacturer" placeholder="Manufacturer" required />
+  <input name="yearOfManufacture" type="number" placeholder="Year" required />
+  <input name="totalFlightHours" type="number" placeholder="Flight Hours" />
+  
+  <select name="status">
+    <option>Active</option>
+    <option>Under Maintenance</option>
+    <option>Grounded</option>
+  </select>
+
+  <button type="submit">Save</button>
+</form>

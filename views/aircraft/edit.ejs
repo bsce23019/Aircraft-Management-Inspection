@@ -1,0 +1,17 @@
+<h2>Edit Aircraft</h2>
+
+<form method="POST" action="/aircraft/edit/<%= aircraft._id %>">
+  <input name="registrationNumber" value="<%= aircraft.registrationNumber %>" />
+  <input name="model" value="<%= aircraft.model %>" />
+  <input name="manufacturer" value="<%= aircraft.manufacturer %>" />
+  <input name="yearOfManufacture" value="<%= aircraft.yearOfManufacture %>" />
+  <input name="totalFlightHours" value="<%= aircraft.totalFlightHours %>" />
+
+  <select name="status">
+    <option <%= aircraft.status==="Active"?"selected":"" %>>Active</option>
+    <option <%= aircraft.status==="Under Maintenance"?"selected":"" %>>Under Maintenance</option>
+    <option <%= aircraft.status==="Grounded"?"selected":"" %>>Grounded</option>
+  </select>
+
+  <button type="submit">Update</button>
+</form>
